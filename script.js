@@ -29,25 +29,25 @@ window.addEventListener("load", () => {
       
         // Add a timeout to draw the left branch
         setTimeout(() => {
-          drawTree(x2, y2, newAngle, depth - 1, branchOpacity / 2, branchWidth / 2);
-        }, 700);
+          drawTree(x2, y2, newAngle, depth - 1, branchOpacity * 0.67, branchWidth * 0.67);
+        }, 1000);
       
         // Add a timeout to draw the right branch
         setTimeout(() => {
-          drawTree(x2, y2, angle + (Math.PI / 180) * angleSlider.value, depth - 1, branchOpacity / 2, branchWidth / 2);
-        }, 700);
+          drawTree(x2, y2, angle + (Math.PI / 180) * angleSlider.value, depth - 1, branchOpacity * 0.67, branchWidth * 0.67);
+        }, 1000);
       }
       
 
       function draw() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
-        drawTree(canvas.width / 2, canvas.height - 50, -Math.PI / 2, 10, 100, 16);
+        drawTree(canvas.width / 2, canvas.height - 50, -Math.PI / 2, 10, 100, 12);
       }
 
       function onDrawButtonClick() {
         draw();
       }
-      angleSlider.addEventListener('input', draw);
-    //   drawButton.addEventListener('click', onDrawButtonClick);
+    //   angleSlider.addEventListener('input', draw);
+      drawButton.addEventListener('click', onDrawButtonClick);
       draw();
 });
